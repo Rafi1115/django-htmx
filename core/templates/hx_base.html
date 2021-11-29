@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://use.fontawesome.com/6db9d51ae7.js"></script>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+#app {
+  width: 50%;
+  min-width: 400px;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 45px;
+  color: #335c62;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+  color: #5c5c5c;
+  font-weight: 300;
+}
+
+
+
+ul li {
+  margin-bottom: 10px;
+  color: #5c5c5c;
+}
+
+
+
+ul li a:hover {
+  opacity: 0.8;
+}
+
+input,
+button {
+  font: 400 20px "Lato", sans-serif;
+}
+
+input {
+  width: 60%;
+  height: 40px;
+  color: #5c5c5c;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 0 24px;
+  margin-right: 10px;
+}
+
+.btn_add {
+  width: 30%;
+  height: 40px;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  background-color: #59a2ad;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn_add:hover {
+  opacity: 0.9;
+}
+
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+  
+      
+      <!-- Custom styles for this template -->
+      <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="blog.css" rel="stylesheet">
+    </head>
+    <body>
+      
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="link-secondary" href="#">Subscribe</a>
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="#">Large</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="link-secondary" href="#" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+          </a>
+          <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+        </div>
+      </div>
+    </header>
+  
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 link-secondary" href="#">World</a>
+        
+      </nav>
+    </div>
+  </div>
+  
+  {% block content %}
+    
+  {% endblock content %}
+  
+
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event) => {
+          event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+      </script>
+  </body>
+</html>

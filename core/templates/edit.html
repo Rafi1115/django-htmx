@@ -1,0 +1,14 @@
+
+
+
+<form hx-post="{% url 'core:edit_todo' todo.pk %}" hx-target="#edit">
+    {% csrf_token %}
+    <input type="text" name="name" maxlength="200" required="" id="id_name" value="{{todo.name}}">
+    <button type="submit" hx-target="edit" class="btn btn-dark" >save</button>
+</form>
+
+<div>
+    
+</div>
+  
+
